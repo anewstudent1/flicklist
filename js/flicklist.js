@@ -2,7 +2,7 @@
 
 var api = {
 	root: "https://api.themoviedb.org/3",
-	token: "" // TODO put your api key here
+	token: "6a12e7f2eb21b23790d5f710781c31f3" // TODO put your api key here
 }
 
 /**
@@ -16,7 +16,7 @@ function testTheAPI() {
 			api_key: api.token,
 		},
 		success: function(response) {
-			console.log("We got a response from The Movie DB!");
+			console.log("We got a response from The Movie DB! :)");
 			console.log(response);
 		}
 	});
