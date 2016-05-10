@@ -28,9 +28,14 @@
     <header>
       <h2>Browse Movies</h2>
       <!-- 
-      TODO 6
+      TODO 6 done!
       add a <form> here for users to search for movies by title 
       -->
+      <form id="form-search">
+        <input type="text" name="query"/>
+        <input type="submit" value="Search by Title"/>
+        
+      </form>
 
     </header>
 
@@ -40,7 +45,17 @@
   <script src="js/flicklist.js"></script>
 
   <script>
-    // TODO 8
+    $("#form-search").submit(function(event){
+      event.preventDefault();
+      
+     
+     
+      
+      
+      
+    });
+    // 
+    TODO 8
     // fill in the missing pieces of the code below
 
     $("TODO 8a").submit(function(evt) {
