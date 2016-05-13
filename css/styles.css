@@ -8,7 +8,7 @@ For CSS stuff, make good use of the Chrome Developer Tools:
 
 /*
 
-TODO 4 done
+TODO 4 done!
 add a selector for elements with class "item-watchlist"
 give these elements a display property of inline-block
 and then style them as shown in the example (padding, margin, background, etc)
@@ -64,7 +64,7 @@ button, input[type="submit"] {
 	border-width: 0px;
 	/*
 	
-	todo 7
+	todo 7 done!
 	give these buttons some padding, and color them orange with white text
 	*/
 }

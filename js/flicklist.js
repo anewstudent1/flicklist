@@ -9,13 +9,13 @@ $(document).ready(function() {
 var model = {
   watchlistItems: [],
   browseItems: []
-}
+};
 
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "6a12e7f2eb21b23790d5f710781c31f3" // TODO 0 add your api key (done!)
-}
+  token: "6a12e7f2eb21b23790d5f710781c31f3" //TODO 0 add your api key (done!)
+};
 
 /**
  * Makes an AJAX request to /discover/movie endpoint of the API
@@ -45,16 +45,22 @@ function discoverMovies(callback) {
  * the callback function that was passed in
  */
 function searchMovies(searchTerm, callback) {
-  console.log("searching for movies with '" + searchTerm + "' in their title...");
-
+ // console.log("searching for movies with '" + searchTerm + "' in their title...");
+$.ajax({
+  url: api.root + "/search/movie",
+  data: {
+    api_key: api.token,
+    query: searchTerm
+  },
+  success: function(response){
+    model.browseItems = response.results;
+      callback();
+  }
+});
   // TODO 9
   // implement this function as described in the comment above
   // you can use the body of discoverMovies as a jumping off point
-
-
 }
-
-
 /**
  * re-renders the page with new content, based on the current state of the model
  */
@@ -75,7 +81,6 @@ function render() {
 
     $("#section-watchlist ul").append(itemView);
   });
-
   // insert browse items
   model.browseItems.forEach(function(movie) {
     var title = $("<h4></h4>").text(movie.original_title);
@@ -84,14 +89,12 @@ function render() {
       .click(function() {
         model.watchlistItems.push(movie);
         render();
-      })
-    .prop("disabled", model.watchlistItems.indexOf(movie) !== -1); 
+      });
       
-      // 
-      
-      
-    
-      // the button should be disabled if this movie is already in
+  var index = model.watchlistItems.indexOf(movie);
+  var alreadyInWathlist = true
+  button.prop("disabled", true); //model.watchlistItems.indexOf(movie) !== -1); 
+     // the button should be disabled if this movie is already in
       // the user's watchlist
       // see jQuery .prop() and Array.indexOf()
 

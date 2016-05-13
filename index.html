@@ -34,9 +34,7 @@
       <form id="form-search">
         <input type="text" name="query"/>
         <input type="submit" value="Search by Title"/>
-        
       </form>
-
     </header>
 
     <ul></ul>
@@ -47,15 +45,8 @@
   <script>
     $("#form-search").submit(function(event){
       event.preventDefault();
-      
-     
-     
-      
-      
-      
-    });
-    // 
-    TODO 8
+      });
+    //TODO 8
     // fill in the missing pieces of the code below
 
     $("TODO 8a").submit(function(evt) {
@@ -64,8 +55,10 @@
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("TODO 8b").val();
-
+      var searchTerm = $("#form-search input[type='text']").val();
+      
+      //call the searhMovies function
+      searchMovies(searchTerm, render);
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
 
