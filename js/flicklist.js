@@ -92,8 +92,9 @@ function render() {
       });
       
   var index = model.watchlistItems.indexOf(movie);
-  var alreadyInWathlist = true
-  button.prop("disabled", true); //model.watchlistItems.indexOf(movie) !== -1); 
+  var alreadyInWatchlist = index !== -1;
+  
+  button.prop("disabled", alreadyInWatchlist); //model.watchlistItems.indexOf(movie) !== -1); 
      // the button should be disabled if this movie is already in
       // the user's watchlist
       // see jQuery .prop() and Array.indexOf()
